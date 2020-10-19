@@ -1,0 +1,72 @@
+﻿$themes: (
+    light: (
+            main-bg: map-get($main-light, 'background-color'),
+
+            header-bg: map-get($header-light, 'background'),
+            header-border: map-get($header-light, 'border'),
+            header-color: map-get($header-light, 'color'),
+
+            bottom-bar-bg: white,
+            bottom-bar-border: #eef2f8,
+
+            sidebar-color: map-get($sidebar-light, color),
+
+            about-card-bg: white,
+
+            font-color-base: #5d686f,
+            hx-color: #4a4a4a,
+            btn-bg: white,
+            tag-bg: white,
+
+            post-shorten-color: map-get($colors, base),
+            post-shorten-border: #eef2f8,
+            post-content-color: map-get($colors, base)        
+    ),
+    dark: (
+            main-bg: map-get($main-dark, 'background-color'),
+
+            header-bg: map-get($header-dark, 'background'),
+            header-border: map-get($header-dark, 'border'),
+            header-color: map-get($header-dark, 'color'),
+
+            bottom-bar-bg: #181A1B,
+            bottom-bar-border: #20324D,
+
+            sidebar-color: map-get($sidebar-dark, color),
+
+            about-card-bg: #181a1b,
+
+            font-color-base: #e8e6e3,
+            hx-color: #B9B3AA,
+            btn-bg: #181A1B,
+            tag-bg: #181A1B,
+
+            post-shorten-color: #B1ABA1,
+            post-shorten-border: #20324D,
+            post-content-color: #A8A095       
+    ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    // // make a class for each theme using interpolation -> #{}
+    // // use & for making the theme class ancestor of the class
+    // // from which you use @include theme() {...}
+    // .#{$theme} & {
+    //   @content;    // the content inside @include theme() {...}
+    // }
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

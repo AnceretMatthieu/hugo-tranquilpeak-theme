@@ -138,10 +138,19 @@ $about: (
 
 // Header
 $header:(
-    'height':     55px,
+    'height':     55px    
+);
+
+$header-light: (
     'background': #fff,
     'color':      #88909a,
     'border':     1px solid #eef2f8
+);
+
+$header-dark: (
+    'background': #181A1B,
+    'color':      #A39B8E,
+    'border':     1px solid #20324D
 );
 
 // Sidebar
@@ -150,13 +159,27 @@ $sidebar: (
     'lg-screen-width':  250px,
     'xlg-screen-width': 500px,
     'background':       rgba(17, 26, 35, 0),
+);
+
+$sidebar-light: (
     'color':            #ebebeb
+);
+
+$sidebar-dark: (
+    'color':            #181a1b
 );
 
 // Main
 $main: (
-    'padding-top':      15px,
+    'padding-top':      15px    
+);
+
+$main-light: (
     'background-color': #fff
+);
+
+$main-dark: (
+    'background-color': #181a1b
 );
 
 // Components settings

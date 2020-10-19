@@ -4,13 +4,16 @@
     position:           fixed;
     bottom:             0;
     height:             60px;
-    background:         white;
     margin:             0;
-    border-top:         1px solid #eef2f8;
     padding:            0 15px;
     z-index:            map-get($z-indexes, c-post-bottom-bar);
     transition:         transform .25s ease-in-out;
     -webkit-transition: -webkit-transform .25s ease-in-out;
+
+    @include themed() {
+        background: t('bottom-bar-bg');
+        border-top: 1px solid t('bottom-bar-border');
+    }
 
     min-width: $main-width - 15px * 2;
     @media only screen and (max-width: $main-width - 15px * 2) {

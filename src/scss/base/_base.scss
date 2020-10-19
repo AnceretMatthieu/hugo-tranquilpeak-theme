@@ -9,12 +9,14 @@ html {
     @include prefix(tap-highlight-color, rgba(0, 0, 0, 0), 'webkit');
 }
 
+// TODO: Ajouter une transition d'1 seconde pour rendre plus smooth le changement de thème :)
+
 body {
     width:          100%;
     height:         100%;
     margin:         0;
     padding:        0;
-    background:     white;
+    background:     white;    
     font-family:    $font-family-base;
     font-size:      map-get($font-size, base);
     line-height:    $line-height-base;
@@ -38,7 +40,10 @@ h6 {
     font-family:    map-get($font-families, 'headings');
     font-weight:    700;
     line-height:    1.45em;
-    color:          #4a4a4a;
+
+    @include themed() {
+        color: t('hx-color');
+    }
 }
 
 h1,
