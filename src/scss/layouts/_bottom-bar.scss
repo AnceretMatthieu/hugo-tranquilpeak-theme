@@ -12,7 +12,7 @@
 
     @include themed() {
         background: t('bottom-bar-bg');
-        border-top: 1px solid t('bottom-bar-border');
+        border-top: t('bottom-bar-border');
     }
 
     min-width: $main-width - 15px * 2;

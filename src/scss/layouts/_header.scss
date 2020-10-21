@@ -17,7 +17,7 @@
 
     @include themed() {
         background: t('header-bg');
-        border: t('header-border');
+        border-bottom: t('header-border');
         color: t('header-color');
     }
 

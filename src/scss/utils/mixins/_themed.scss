@@ -7,7 +7,7 @@
             header-color: map-get($header-light, 'color'),
 
             bottom-bar-bg: white,
-            bottom-bar-border: #eef2f8,
+            bottom-bar-border: 1px solid #eef2f8,
 
             sidebar-color: map-get($sidebar-light, color),
             sidebar-color-hover: lighten(map-get($sidebar-light, color), 45),
@@ -20,6 +20,7 @@
             btn-bg: white,
             tag-bg: white,
             table-row-bg: #f7f8f8,
+            box-border-bottom: 1px solid #eef2f8,
 
             highlight-bg: map-get($highlight-light, 'background'),
             highlight-color: map-get($highlight-light, 'color'),
@@ -53,12 +54,12 @@
             header-color: map-get($header-dark, 'color'),
 
             bottom-bar-bg: #181A1B,
-            bottom-bar-border: #20324D,
+            bottom-bar-border: none, //1px solid #20324D,
 
             sidebar-color: map-get($sidebar-dark, color),
             sidebar-color-hover: lighten(map-get($sidebar-dark, color), 15%),
 
-            about-card-bg: #181a1b,
+            about-card-bg: #121212,
             about-card-color: #e8e6e3,
 
             font-color-base: #e8e6e3,
@@ -66,6 +67,7 @@
             btn-bg: #181A1B,
             tag-bg: #181A1B,
             table-row-bg: #333,
+            box-border-bottom: 1px solid #26282B,
 
             highlight-bg: map-get($highlight-dark, 'background'),
             highlight-color: map-get($highlight-dark, 'color'),
