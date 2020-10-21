@@ -166,7 +166,7 @@ $sidebar-light: (
 );
 
 $sidebar-dark: (
-    'color':            #181a1b
+    'color':             #333
 );
 
 // Main
@@ -188,10 +188,19 @@ $main-dark: (
 
 // Highlight code
 $highlight: (
-    'background':  #f7f8f8,
     'font-size':   1.4rem,
     'border':      1px solid,
     'line-height': 2.3rem
+);
+
+$highlight-light: (
+    'background':  #f7f8f8,
+    'color':       #A8A095
+);
+
+$highlight-dark: (
+    'background':  #333,
+    'color':       #e8e6e3
 );
 
 // Highlight colors
@@ -221,17 +230,17 @@ $highlight-colors: (
 );
 // Highlight text
 $highlight-text-bg-colors: (
-    'red':     lighten(red, 45%),
-    'green':   lighten(green, 65%),
-    'blue':    lighten(blue, 45%),
-    'purple':  lighten(purple, 70%),
-    'orange':  lighten(orange, 40%),
-    'yellow':  lighten(yellow, 40%),
-    'cyan':    lighten(cyan, 40%),
-    'primary': lighten(map-get($colors, 'primary'), 35%),
-    'success': lighten(map-get($colors, 'success'),35%),
-    'warning': lighten(map-get($colors, 'warning'), 40%),
-    'danger':  lighten(map-get($colors, 'danger'), 40%),
+    'red':     red,
+    'green':   green,
+    'blue':    blue,
+    'purple':  purple,
+    'orange':  orange,
+    'yellow':  yellow,
+    'cyan':    cyan,
+    'primary': map-get($colors, 'primary'),
+    'success': map-get($colors, 'success'),
+    'warning': map-get($colors, 'warning'),
+    'danger':  map-get($colors, 'danger'),
 );
 // Image gallery photos
 // Space between 2 photos

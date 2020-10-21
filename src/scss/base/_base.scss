@@ -9,20 +9,21 @@ html {
     @include prefix(tap-highlight-color, rgba(0, 0, 0, 0), 'webkit');
 }
 
-// TODO: Ajouter une transition d'1 seconde pour rendre plus smooth le changement de thème :)
-
 body {
     width:          100%;
     height:         100%;
     margin:         0;
     padding:        0;
-    background:     white;    
     font-family:    $font-family-base;
     font-size:      map-get($font-size, base);
     line-height:    $line-height-base;
     letter-spacing: $letter-spacing-base;
     // Improve smoothing of the font by adding subpixel in Safari
     @include prefix(font-smoothing, subpixel-antialiased, 'webkit');
+
+    @include themed() {
+        background: t('main-bg');
+    }
 
     // Hide overflow-x when the sidebar is swiped
     &.pushed {
@@ -107,7 +108,9 @@ table {
     }
     tr {
         &:nth-child(2n) {
-            background: #f7f8f8;
+            @include themed() {
+                background: t('table-row-bg');
+            }
         }
     }
 }
@@ -150,8 +153,12 @@ code {
     display:          inline-block;
     font-family:      map-get($font-families, 'code');
     font-weight:      400;
-    background-color: map-get($highlight, 'background');
     padding:          0 10px;
+
+    @include themed() {
+        background-color: t('highlight-bg');
+        color: t('highlight-color');
+    }
 }
 
 blockquote {

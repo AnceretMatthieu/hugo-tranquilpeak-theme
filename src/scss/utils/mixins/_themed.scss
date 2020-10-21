@@ -10,13 +10,36 @@
             bottom-bar-border: #eef2f8,
 
             sidebar-color: map-get($sidebar-light, color),
+            sidebar-color-hover: lighten(map-get($sidebar-light, color), 45),
 
             about-card-bg: white,
+            about-card-color: #5d686f,
 
             font-color-base: #5d686f,
             hx-color: #4a4a4a,
             btn-bg: white,
             tag-bg: white,
+            table-row-bg: #f7f8f8,
+
+            highlight-bg: map-get($highlight-light, 'background'),
+            highlight-color: map-get($highlight-light, 'color'),
+
+            alert-info-bg: lighten(map-get($colors, 'primary'), 37%),
+            alert-success-bg: lighten(map-get($colors, 'success'), 42%),
+            alert-warning-bg: lighten(map-get($colors, 'warning'), 42%),
+            alert-danger-bg: lighten(map-get($colors, 'danger'), 42%),
+
+            highlight-text-red-bg: lighten(map-get($highlight-text-bg-colors, 'red'), 45%),
+            highlight-text-green-bg: lighten(map-get($highlight-text-bg-colors, 'green'), 65%),
+            highlight-text-blue-bg: lighten(map-get($highlight-text-bg-colors, 'blue'), 45%),
+            highlight-text-purple-bg: lighten(map-get($highlight-text-bg-colors, 'purple'), 70%),
+            highlight-text-orange-bg: lighten(map-get($highlight-text-bg-colors, 'orange'), 40%),
+            highlight-text-yellow-bg: lighten(map-get($highlight-text-bg-colors, 'yellow'), 40%),
+            highlight-text-cyan-bg: lighten(map-get($highlight-text-bg-colors, 'cyan'), 40%),
+            highlight-text-primary-bg: lighten(map-get($highlight-text-bg-colors, 'primary'), 35%),
+            highlight-text-success-bg: lighten(map-get($highlight-text-bg-colors, 'success'), 35%),
+            highlight-text-warning-bg: lighten(map-get($highlight-text-bg-colors, 'warning'), 40%),
+            highlight-text-danger-bg: lighten(map-get($highlight-text-bg-colors, 'danger'), 40%),
 
             post-shorten-color: map-get($colors, base),
             post-shorten-border: #eef2f8,
@@ -33,13 +56,36 @@
             bottom-bar-border: #20324D,
 
             sidebar-color: map-get($sidebar-dark, color),
+            sidebar-color-hover: lighten(map-get($sidebar-dark, color), 15%),
 
             about-card-bg: #181a1b,
+            about-card-color: #e8e6e3,
 
             font-color-base: #e8e6e3,
             hx-color: #B9B3AA,
             btn-bg: #181A1B,
             tag-bg: #181A1B,
+            table-row-bg: #333,
+
+            highlight-bg: map-get($highlight-dark, 'background'),
+            highlight-color: map-get($highlight-dark, 'color'),
+
+            alert-info-bg: darken(map-get($colors, 'primary'), 37%),
+            alert-success-bg: darken(map-get($colors, 'success'), 42%),
+            alert-warning-bg: darken(map-get($colors, 'warning'), 42%),
+            alert-danger-bg: darken(map-get($colors, 'danger'), 42%),
+
+            highlight-text-red-bg: darken(map-get($highlight-text-bg-colors, 'red'), 35%),
+            highlight-text-green-bg: darken(map-get($highlight-text-bg-colors, 'green'), 15%),
+            highlight-text-blue-bg: darken(map-get($highlight-text-bg-colors, 'blue'), 35%),
+            highlight-text-purple-bg: darken(map-get($highlight-text-bg-colors, 'purple'), 15%),
+            highlight-text-orange-bg: darken(map-get($highlight-text-bg-colors, 'orange'), 30%),
+            highlight-text-yellow-bg: darken(map-get($highlight-text-bg-colors, 'yellow'), 30%),
+            highlight-text-cyan-bg: darken(map-get($highlight-text-bg-colors, 'cyan'), 35%),
+            highlight-text-primary-bg: darken(map-get($highlight-text-bg-colors, 'primary'), 35%),
+            highlight-text-success-bg: darken(map-get($highlight-text-bg-colors, 'success'), 35%),
+            highlight-text-warning-bg: darken(map-get($highlight-text-bg-colors, 'warning'), 35%),
+            highlight-text-danger-bg: darken(map-get($highlight-text-bg-colors, 'danger'), 35%),
 
             post-shorten-color: #B1ABA1,
             post-shorten-border: #20324D,

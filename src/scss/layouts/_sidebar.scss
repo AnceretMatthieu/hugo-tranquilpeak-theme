@@ -64,7 +64,7 @@
                     text-decoration: none;
 
                     @include themed() {
-                        color: lighten(t('sidebar-color'), 35);
+                        color: t('sidebar-color-hover');
                     }
                 }
             }

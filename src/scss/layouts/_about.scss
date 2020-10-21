@@ -60,7 +60,9 @@
             font-size:   $font-size-base;
             line-height: $line-height-base;
             font-weight: 400;
-            color:       map-get($colors, base);
+            @include themed() {
+                color: t('about-card-color');
+            }
         }
     }
 }
