@@ -61,7 +61,7 @@
 
       // If you push escape key, close the modal
       document.addEventListener("keydown", function(event) {
-        const key = event.key;
+        var key = event.key;
         if (key === "Escape") {
           self.playBack();
         }
