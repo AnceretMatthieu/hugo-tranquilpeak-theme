@@ -20,9 +20,10 @@
         line-height: 1.5em;
         font-family: map-get($font-families, 'post-meta');
         font-size:   map-get($font-size, small);
-        font-weight: 400;
+
         @include themed() {
             color: t('post-meta-color');
+            font-weight: t('font-weight-base');
         }
 
         a {
@@ -36,12 +37,12 @@
         letter-spacing: -0.3px;
         font-family:    map-get($font-families, 'post-content');
         margin-top:     20px;
-        font-weight:    400;
         overflow:       hidden;
         @include prefix('hypens', 'auto', 'webkit' 'moz');
 
         @include themed() {
             color: t('post-content-color');
+            font-weight: t('font-weight-base');
         }
 
         img {
@@ -63,7 +64,9 @@
         &-tags {
             padding-bottom: 10px;
             margin-bottom:  10px;
-            border-bottom:  1px solid #eef2f8;
+            @include themed() {
+                border-bottom: t('box-border-bottom');
+            }
         }
     }
 }

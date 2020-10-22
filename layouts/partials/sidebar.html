@@ -9,7 +9,9 @@
         {{ with $.Site.Author.bio }}
           <h5 class="sidebar-profile-bio">{{ . | markdownify }}</h5>
         {{ end }}
-        {{ partial "toggle.html" . }}
+        {{ if $.Site.Params.enableThemeSwitcher }}
+          {{ partial "toggle.html" . }}
+        {{ end }}
       </div>
     {{ end }}
     <ul class="sidebar-buttons">

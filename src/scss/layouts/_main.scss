@@ -9,6 +9,7 @@
         min-width: 100%;
     }
 
+    background: map-get($main-dark, 'background-color');
     @include themed() {
         background: t('main-bg');
     }

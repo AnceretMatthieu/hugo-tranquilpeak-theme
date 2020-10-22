@@ -23,6 +23,7 @@ body {
 
     @include themed() {
         background: t('main-bg');
+        font-weight: t('font-weight-base');
     }
 
     // Hide overflow-x when the sidebar is swiped

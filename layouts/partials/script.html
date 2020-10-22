@@ -7,15 +7,14 @@
 {{ end }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 {{ if (.Params.mermaid) }}
-  <!-- <script type="text/javascript" src="https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js" crossorigin="anonymous"></script> -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" crossorigin="anonymous"></script>
   <script>
-    mermaid.initialize({ startOnLoad: true });
+    mermaid.initialize({ theme: 'dark', startOnLoad: true });
   </script>
 {{ end }}
 <!--EXTERNAL SCRIPTS END-->
 <!--SCRIPTS-->
-<script src="/js/script-jsilukuq7qljiaqnipbvkargfvxhraehx3amgxyfsgc01s5k6dkdbmt8dc.min.js"></script>
+<script src="/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 {{ range .Site.Params.customJS }}
   {{ if isset . "src" }}

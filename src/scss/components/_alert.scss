@@ -25,7 +25,7 @@
         }
     }
     &.info {
-        border-color:     map-get($colors, 'primary');
+        border-color:     map-get($colors, 'info');
 
         @include themed() {
             background-color: t('alert-info-bg');
@@ -34,7 +34,7 @@
         &:not(.no-icon) {
             &:before {
                 content: "\f05a";
-                color:   map-get($colors, 'primary');
+                color:   map-get($colors, 'info');
             }
         }
     }
