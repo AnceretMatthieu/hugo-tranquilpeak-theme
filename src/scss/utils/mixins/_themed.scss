@@ -21,6 +21,7 @@
             tag-bg: white,
             table-row-bg: #f7f8f8,
             box-border-bottom: 1px solid #eef2f8,
+            image-filter: none,
 
             highlight-bg: map-get($highlight-light, 'background'),
             highlight-color: map-get($highlight-light, 'color'),
@@ -44,7 +45,8 @@
 
             post-shorten-color: map-get($colors, base),
             post-shorten-border: #eef2f8,
-            post-content-color: map-get($colors, base)        
+            post-content-color: map-get($colors, base),
+            post-meta-color: map-get($colors, light)
     ),
     dark: (
             main-bg: map-get($main-dark, 'background-color'),
@@ -54,7 +56,7 @@
             header-color: map-get($header-dark, 'color'),
 
             bottom-bar-bg: #181A1B,
-            bottom-bar-border: none, //1px solid #20324D,
+            bottom-bar-border: none,
 
             sidebar-color: map-get($sidebar-dark, color),
             sidebar-color-hover: lighten(map-get($sidebar-dark, color), 15%),
@@ -68,6 +70,7 @@
             tag-bg: #181A1B,
             table-row-bg: #333,
             box-border-bottom: 1px solid #26282B,
+            image-filter: brightness(.8) contrast(1.2),
 
             highlight-bg: map-get($highlight-dark, 'background'),
             highlight-color: map-get($highlight-dark, 'color'),
@@ -91,18 +94,13 @@
 
             post-shorten-color: #B1ABA1,
             post-shorten-border: #26282B,
-            post-content-color: #A8A095       
+            post-content-color: #A8A095,
+            post-meta-color: map-get($colors, light)     
     ),
 );
 
 @mixin themed() {
-  @each $theme, $map in $themes {
-    // // make a class for each theme using interpolation -> #{}
-    // // use & for making the theme class ancestor of the class
-    // // from which you use @include theme() {...}
-    // .#{$theme} & {
-    //   @content;    // the content inside @include theme() {...}
-    // }
+  @each $theme, $map in $themes {    
     .theme--#{$theme} & {
       $theme-map: () !global;
       @each $key, $submap in $map {
