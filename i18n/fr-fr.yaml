@@ -146,6 +146,11 @@
 - id: "post.gallery"
   translation: "Galerie"
 
+- id: "post.reading_time"
+  translation: 
+    other: "{{ .Count }} minutes de lecture estimée"
+    one: "1 minute de lecture estimée" 
+
 ## POST.IMAGE ##
 
 - id: "post.image.one"
