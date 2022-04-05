@@ -1,11 +1,9 @@
 ﻿{{ with .Site.Params.umami }}
     {{ if isset . "id" }}        
-        {{ if .Site.IsServer }}
             <script async defer 
                 src="{{ .url }}"    
                 data-website-id="{{ .id }}" 
                 data-do-not-track="true">
             </script>
-        {{ end }}
     {{ end }}
 {{ end }}
