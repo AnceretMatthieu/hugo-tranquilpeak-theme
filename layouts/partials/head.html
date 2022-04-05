@@ -63,5 +63,8 @@
     {{ else }}
       {{ template "_internal/google_analytics.html" . }}
     {{ end }}
+
+    {{ partial "umami.html" . }}
+    
     {{ partial "head_end.html" . }}
   </head>
