@@ -4,22 +4,23 @@
     {{- $.Scratch.Set "isTypeInMainSections" true -}}
   {{- end -}}
 {{- end -}}
-{{- if and (and ($.Scratch.Get "isTypeInMainSections") (lt .Site.Params.sidebarBehavior 3)) (or (and .Site.Params.clearReading (not .Params.clearReading)) .Params.clearReading) -}}
-  {{- .Scratch.Set "sidebarBehavior" (add .Site.Params.sidebarBehavior 3) -}}
+{{- $sidebarBehavior := .Site.Params.sidebarBehavior | int -}}
+{{- if and (and ($.Scratch.Get "isTypeInMainSections") (lt $sidebarBehavior 3)) (or (and .Site.Params.clearReading (not .Params.clearReading)) .Params.clearReading) -}}
+  {{- .Scratch.Set "sidebarBehavior" (add $sidebarBehavior 3) -}}
 {{- else -}}
-  {{- .Scratch.Set "sidebarBehavior" .Site.Params.sidebarBehavior -}}
+  {{- .Scratch.Set "sidebarBehavior" $sidebarBehavior -}}
 {{- end -}}
-<!-- Fix hugo 0.17 expects ".Site.Author.gravatarEmail" whereas hugo 0.18 expects ".Site.Author.gravataremail" -->
-{{- if .Site.Author.gravatarEmail -}}
-  {{- .Scratch.Set "gravatarEmail" .Site.Author.gravatarEmail -}}
+<!-- Fix hugo 0.17 expects ".Site.Params.Author.gravatarEmail" whereas hugo 0.18 expects ".Site.Params.Author.gravataremail" -->
+{{- if .Site.Params.Author.gravatarEmail -}}
+  {{- .Scratch.Set "gravatarEmail" .Site.Params.Author.gravatarEmail -}}
 {{- end -}}
-{{- if .Site.Author.gravataremail -}}
-  {{- .Scratch.Set "gravatarEmail" .Site.Author.gravataremail -}}
+{{- if .Site.Params.Author.gravataremail -}}
+  {{- .Scratch.Set "gravatarEmail" .Site.Params.Author.gravataremail -}}
 {{- end -}}
 {{- if .Scratch.Get "gravatarEmail" -}}
   {{- .Scratch.Set "authorPicture" (printf "https://www.gravatar.com/avatar/%s" (urlize (md5 (.Scratch.Get "gravatarEmail")))) -}}
-{{- else if .Site.Author.picture -}}
-  {{- .Scratch.Set "authorPicture" (absURL .Site.Author.picture) -}}
+{{- else if .Site.Params.Author.picture -}}
+  {{- .Scratch.Set "authorPicture" (absURL .Site.Params.Author.picture) -}}
 {{- end -}}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
@@ -32,10 +33,6 @@
     <link rel="icon" href="{{ with .Site.Params.favicon }}{{ . | absURL }}{{ else }}/favicon.png{{ end }}">
     {{ with .OutputFormats.Get "RSS" }}
       <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .RelPermalink }}">
-    {{ end }}
-
-    {{ with .Site.Author.googleplus }}
-      <link rel="publisher" href="https://plus.google.com/{{ . | urlize }}">
     {{ end }}
 
     <link rel="canonical" href="{{ .Permalink }}">
@@ -56,12 +53,6 @@
       {{ else }}
         <link rel="stylesheet" href="{{ . | absURL }}">
       {{ end }}
-    {{ end }}
-
-    {{ if or .Params.googleAnalytics.async .Params.ga.async }}
-      {{ template "_internal/google_analytics_async.html" . }}
-    {{ else }}
-      {{ template "_internal/google_analytics.html" . }}
     {{ end }}
 
     {{ partial "umami.html" . }}
